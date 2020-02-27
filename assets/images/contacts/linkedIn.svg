@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 35 35" width="35" height="35">
+	<defs>
+		<image width="35" height="35" id="img1" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACMAAAAjCAMAAAApB0NrAAAAAXNSR0IB2cksfwAAAN5QTFRFAAAAZm2JZm2JZm2JZm2JZm2JZm2JZm2JZm2JZm2JZm2JZm2JZm2JZm2JZm2JZm2JZm2JZm2JZm2JZm2JZm2JZm2JZm2JZm2JZm2JZm2JZm2JZm2JZm2JZm2JZm2JZm2JZm2JZm2JZm2JZm2JZm2JZm2JZW2JZW2JZW2JZW2JZm2JZm2JZW2JZW2JZm2JZm2JZm2JZW2JZW2JZm2JZm2JZm2JZm2JZW2JZW2JZW2JZm2JZm2JZm2JZm2JZm2JZm2JZm2JZm2JZm2JZm2JZm2JZm2JZm2JZm2JZm2JZm2Jicm6wgAAAEp0Uk5TAAxXmMjp+CKb77RuORcHIwiIgRUWz6oYJDLlazHnVAls0KmJ6oDP/98QnA1A75ptO4CPOuv5Bp9QIH8litEKqBTwszgF8ViZyfqMTM3kAAABZklEQVR4nKWU63aCMAyAK4IDFO8X1Cls1HVTkXndpmM6dV7e/4XWCpW1lHO2s/xIk/KdJE0bAPibpKS0rGQyipyWUmLiRtX0bM7I541cVtfUQpwolpRyJXKrZaVU5JBCrd5gdxr1mslsNFvteOh26/aHZ3a6ogq7nSiSVbNFCAD2nUXNUl2MAHDv0HphI4kxYNgCtResD+jxiYd6/csy0MK+IISGPFPRBmSRdEDjuLE4QJeIHnnUj0XB4o2Ilp9BlGuI0HiCjQllpjLRswrLuIjImBY0I3q+YBnkvmDMDTcXcyEzBK9YMwyfC399i5gglzyNMSBigpqvZxcy9uXs1x4KmaCHzF3wTHgXoN9LZpbBnQITGiBBDLgKLSf5jb1Ty/JtMWL7H1f7F28+cXaajG/6a+5RG2ufnUE8yw5cbiJ3s4QOP8tYVurn1ttV9/vqztt+9VdxgkjqcDzB8xmejoeEf8v/5BuuuC5Hzn0vvgAAAABJRU5ErkJggg=="/>
+	</defs>
+	<style>
+		svg { cursor: pointer; },
+		svg:hover { fill: red }
+	</style>
+	<g id="About Us">
+		<g id="Social Media">
+			<g id="LinkedIn">
+				<use id="Ellipse 2 copy 3" href="#img1" x="0" y="0" />
+			</g>
+		</g>
+	</g>
+</svg>
