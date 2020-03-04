@@ -9,3 +9,6 @@ https://github.com/rolling-scopes-school/tasks/blob/master/tasks/markups/level-2
 
 #### Part 2
 https://github.com/rolling-scopes-school/tasks/blob/master/tasks/markups/level-2/singolo/part-3/singolo-3-ru.md
+
+### Solution
+https://doher.github.io/singolo
