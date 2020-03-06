@@ -16,6 +16,7 @@
   --color-bg-add: var(--color-header-add);
   --color-bg-add-shadow: #ea666b;
   --color-bg-form: #d6564f;
+  --color-bg-valid: rgb(51, 70, 51);
   /* other colors */
   --color-style-list: #494e62;
   --color-border: var(--color-primary);
@@ -277,6 +278,7 @@ a {
 
 .service__text {
   height: 60px;
+  width: 220px;
   font-size: 1.2rem;
   line-height: 2.1rem;
   letter-spacing: -0.009rem;
@@ -396,8 +398,11 @@ a {
   line-height: 1.8rem;
   font-weight: 900;
   letter-spacing: -0.022rem;
+  width: 300px;
   margin-top: 14px;
   white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
   color: var(--color-primary);
 }
 
@@ -526,6 +531,10 @@ a {
 
 .quote__input:hover::placeholder, .quote__textarea:hover::placeholder {
   color: var(--color-light);
+}
+
+.quote__input:required:valid {
+  background-color: var(--color-bg-valid);
 }
 
 .quote__button {
