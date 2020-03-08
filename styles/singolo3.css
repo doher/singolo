@@ -120,19 +120,19 @@ body {
 }
 
 .ico_location {
-  background-image: url("../assets/images/information/location.svg");
+  background-image: url(./assets/images/location.png);
   width: 7px;
   height: 11px;
 }
 
 .ico_phone {
-  background-image: url("../assets/images/information/phone.svg");
+  background-image: url(./assets/images/phone@1X.png);
   width: 11px;
   height: 11px;
 }
 
 .ico_mail {
-  background-image: url("../assets/images/information/mail.svg");
+  background-image:  url(./assets/images/mail.png);
   width: 13px;
   height: 8px;
 }
