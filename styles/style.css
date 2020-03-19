@@ -1,4 +1,5 @@
 @import "lato.css";
+@import "modal.css";
 :root {
   /* text colors */
   --color-primary: #666d89;
@@ -101,55 +102,246 @@ a {
   color: var(--color-header);
 }
 
-.navigation__link:hover {
+.navigation__link:hover, .navigation__link.active {
   color: var(--color-header-add);
 }
 
 /* Slider */
 
-.slider {
+.carousel {
   background-color: var(--color-bg-add);
   border-bottom: 6px solid var(--color-bg-add-shadow);
 }
 
-.slider__wrapper {
+.carousel_changed {
+  background-color: #648bf0;
+  border-bottom: 6px solid rgb(64, 100, 192);
+}
+
+.carousel__wrapper {
+  position: relative;
+}
+
+.carousel__container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.carousel__item {
+  display: none;
+  position: relative;
+  max-width: 796px;
+  animation: 0.5s ease-in-out;
+}
+
+.carousel__item_active, .carousel__item_next {
+  display: block;
+}
+
+.carousel__item_next {
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.carousel__description {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 53px 0 58px;
+  position: relative;
 }
 
-.slider__button {
-  border: none;
-  width: 16px;
+.phone_medium {
+  position: relative;
+  width: 240px;
+  height: 483px;
+}
+
+.phone_medium_vertical {
+  margin: 53px 0 58px 71px;
+}
+
+.phone_medium_horizontal {
+  transform: rotate(90deg);
+  margin: 0 75px 5px 0;
+}
+
+.phone_medium_horizontal>.phone-shadow__image {
+  transform: scaleX(-1);
+  bottom: 25px;
+}
+
+.carousel-slide-2 {
+  justify-content: center;
+  margin-left: 146px;
+}
+
+.phone_large {
+  position: relative;
+  margin: 43px 0 38px;
+  width: 255px;
+  height: 513px;
+}
+
+.phone_large>.phone-display__image {
+  top: 69px;
+}
+
+.phone_small {
+  position: relative;
+  width: 156px;
+  height: 314px;
+}
+
+.phone_small>.phone-display__image {
+  top: 42px;
+  left: 9px;
+}
+
+.phone_small_left {
+  opacity: 0.5;
+  top: 11px;
+  left: 25px;
+}
+
+.phone_small_right {
+  opacity: 0.5;
+  top: 11px;
+  right: 26px;
+}
+
+.phone-shadow__image {
+  position: absolute;
+  z-index: 1;
+}
+
+.phone__image {
+  position: absolute;
+  z-index: 2;
+}
+
+.phone-display__image {
+  display: none;
+  position: absolute;
+  z-index: 3;
+  top: 65px;
+  left: 14px;
+}
+
+.phone-display__image_active {
+  display: block;
+}
+
+.phone__button_medium {
+  position: absolute;
+  width: 42px;
+  height: 42px;
+  z-index: 4;
+  cursor: pointer;
+  border-radius: 50%;
+  opacity: 0;
+  bottom: 35px;
+  left: 88px;
+}
+
+.phone__button_large {
+  position: absolute;
+  width: 45px;
+  height: 45px;
+  z-index: 4;
+  cursor: pointer;
+  border-radius: 50%;
+  opacity: 0;
+  bottom: 35px;
+  left: 88px;
+}
+
+.phone__button_small {
+  position: absolute;
+  width: 27px;
   height: 27px;
+  z-index: 4;
+  cursor: pointer;
+  border-radius: 50%;
+  opacity: 0;
+  bottom: 21px;
+  left: 55px;
+}
+
+.carousel__control {
+  position: absolute;
+  top: 0;
+  bottom: 0;
   cursor: pointer;
 }
 
-.slider__button:hover {
+.carousel__control:hover {
   filter: brightness(50%);
 }
 
-.slider__button_left {
-  background: url("../assets/images/slider/left.png");
+.carousel__control_left {
+  left: 0;
+  right: auto;
 }
 
-.slider__button_right {
-  background: url("../assets/images/slider/right.png");
+.carousel__control_right {
+  right: 0;
+  left: auto;
 }
 
-.slider__content {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+.arrow {
+  display: inline-block;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 16px;
+  height: 27px;
 }
 
-.slider__image-1 {
-  margin-right: 37px;
+.arrow_left {
+  background: url('../assets/images/slider/left-arrow.png');
 }
 
-.slider__image-2 {
-  margin: 0px 2px 1px 36px;
+.arrow_right {
+  background: url('../assets/images/slider/right-arrow.png');
+  right: 50%;
+}
+
+.to-left {
+  animation-name: left;
+}
+
+.from-right {
+  animation-name: right;
+}
+
+.to-right {
+  animation-name: right;
+  animation-direction: reverse;
+}
+
+.from-left {
+  animation-name: left;
+  animation-direction: reverse;
+}
+
+@keyframes left {
+  from {
+    left: 0;
+  }
+  to {
+    left: -100%;
+  }
+}
+
+@keyframes right {
+  from {
+    left: 100%;
+  }
+  to {
+    left: 0;
+  }
 }
 
 /* Services */
@@ -296,7 +488,7 @@ a {
 }
 
 .portfolio__wrapper {
-  padding: 59px 0 70px;
+  padding: 59px 0 68px;
 }
 
 .portfolio__title {
@@ -315,7 +507,7 @@ a {
 }
 
 .portfolio__tags {
-  padding: 10px 0 0;
+  padding: 10px 0 5px;
 }
 
 .tag {
@@ -332,7 +524,7 @@ a {
   border: 1px solid var(--color-primary);
 }
 
-.tag_bordered:hover {
+.tag_bordered:hover, .tag_bordered.active {
   border: 1px solid var(--color-border-tag-hover);
   color: var(--color-tag-hover);
 }
@@ -352,12 +544,16 @@ a {
   flex-basis: 220px;
 }
 
-.project-row-1 {
-  margin-top: 23px;
+.project-image {
+  width: 220px;
+  height: 187px;
+  margin-top: 19px;
+  cursor: pointer;
 }
 
-.project-row-2, .project-row-3 {
-  margin-top: 17px;
+.project-image.active {
+  border: 5px solid #F06C64;
+  filter: brightness(50%);
 }
 
 /* About Us */
@@ -641,6 +837,6 @@ a {
 
 /* Transition */
 
-.navigation__link, .slider__button, .tag_bordered, .quote__button, .quote__input, .quote__textarea, .icon-circle_small {
+.navigation__link, .carousel__control, .tag_bordered, .quote__button, .quote__input, .quote__textarea, .icon-circle_small, .project-image.active {
   transition: all 0.3s ease-out;
 }

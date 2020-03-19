@@ -26,14 +26,64 @@
     </div>
   </header>
 
-  <div class="slider">
-    <div class="wrapper slider__wrapper">
-      <button class="slider__button slider__button_left"></button>
-      <div class="slider__content">
-        <img class="slider__image-1" src="./assets/images/slider/iphone-vertical.png" alt="iphone vertical">
-        <img class="slider__image-2" src="./assets/images/slider/iphone-horizontal.png" alt="iphone horizontal">
+  <div class="carousel">
+    <div class="wrapper carousel__wrapper">
+      <div class="carousel__container">
+        <div class="carousel__item carousel__item_active">
+          <div class="carousel__description">
+            <div class="phone_medium phone_medium_vertical">
+              <img class="phone-shadow__image" src="./assets/images/slider/medium-phone/phone-shadow.png"
+                alt="phone shadow">
+              <img class="phone__image" src="./assets/images/slider/medium-phone/phone.png" alt="phone">
+              <img class="phone-display__image phone-display__image_active"
+                src="./assets/images/slider/medium-phone/phone-display-yellow.png" alt="phone display">
+              <div class="phone__button phone__button_medium"></div>
+            </div>
+            <div class="phone_medium phone_medium_horizontal">
+              <img class="phone-shadow__image" src="./assets/images/slider/medium-phone/phone-shadow.png"
+                alt="phone shadow">
+              <img class="phone__image" src="./assets/images/slider/medium-phone/phone.png" alt="phone">
+              <img class="phone-display__image phone-display__image_active"
+                src="./assets/images/slider/medium-phone/phone-display-blue.png" alt="phone display">
+              <div class="phone__button phone__button_medium"></div>
+            </div>
+          </div>
+        </div>
+        <div class="carousel__item">
+          <div class="carousel__description carousel-slide-2">
+            <div class="phone_small phone_small_left">
+              <img class="phone-shadow__image" src="./assets/images/slider/small-phone/phone-shadow.png"
+                alt="phone shadow">
+              <img class="phone__image" src="./assets/images/slider/small-phone/phone.png" alt="phone">
+              <img class="phone-display__image phone-display__image_active"
+                src="./assets/images/slider/small-phone/phone-display-yellow.png" alt="phone display">
+              <div class="phone__button phone__button_small"></div>
+            </div>
+            <div class="phone_large">
+              <img class="phone-shadow__image" src="./assets/images/slider/large-phone/phone-shadow.png"
+                alt="phone shadow">
+              <img class="phone__image" src="./assets/images/slider/large-phone/phone.png" alt="phone">
+              <img class="phone-display__image phone-display__image_active"
+                src="./assets/images/slider/large-phone/phone-display-green.png" alt="phone display">
+              <div class="phone__button phone__button_large"></div>
+            </div>
+            <div class="phone_small phone_small_right">
+              <img class="phone-shadow__image" src="./assets/images/slider/small-phone/phone-shadow.png"
+                alt="phone shadow">
+              <img class="phone__image" src="./assets/images/slider/small-phone/phone.png" alt="phone">
+              <img class="phone-display__image phone-display__image_active"
+                src="./assets/images/slider/small-phone/phone-display-yellow.png" alt="phone display">
+              <div class="phone__button phone__button_small"></div>
+            </div>
+          </div>
+        </div>
       </div>
-      <button class="slider__button slider__button_right"></button>
+      <div class="carousel__control carousel__control_left">
+        <div class="arrow arrow_left"></div>
+      </div>
+      <div class="carousel__control carousel__control_right">
+        <div class="arrow arrow_right"></div>
+      </div>
     </div>
   </div>
 
@@ -132,42 +182,18 @@
         <span class="tag tag_bordered">Artwork</span>
       </div>
       <div class="layout-4-column project-wrapper">
-        <div class="project-row-1">
-          <img src="./assets/images/portfolio/1.jpg" alt="1">
-        </div>
-        <div class="project-row-1">
-          <img src="./assets/images/portfolio/2.jpg" alt="2">
-        </div>
-        <div class="project-row-1">
-          <img src="./assets/images/portfolio/3.jpg" alt="3">
-        </div>
-        <div class="project-row-1">
-          <img src="./assets/images/portfolio/4.jpg" alt="4">
-        </div>
-        <div class="project-row-2">
-          <img src="./assets/images/portfolio/5.jpg" alt="5">
-        </div>
-        <div class="project-row-2">
-          <img src="./assets/images/portfolio/6.jpg" alt="6">
-        </div>
-        <div class="project-row-2">
-          <img src="./assets/images/portfolio/7.jpg" alt="7">
-        </div>
-        <div class="project-row-2">
-          <img src="./assets/images/portfolio/8.jpg" alt="8">
-        </div>
-        <div class="project-row-3">
-          <img src="./assets/images/portfolio/9.jpg" alt="9">
-        </div>
-        <div class="project-row-3">
-          <img src="./assets/images/portfolio/10.jpg" alt="10">
-        </div>
-        <div class="project-row-3">
-          <img src="./assets/images/portfolio/11.jpg" alt="11">
-        </div>
-        <div class="project-row-3">
-          <img src="./assets/images/portfolio/12.jpg" alt="12">
-        </div>
+        <img class="project-image" src="./assets/images/portfolio/1.jpg" alt="1">
+        <img class="project-image" src="./assets/images/portfolio/2.jpg" alt="2">
+        <img class="project-image" src="./assets/images/portfolio/3.jpg" alt="3">
+        <img class="project-image" src="./assets/images/portfolio/4.jpg" alt="4">
+        <img class="project-image" src="./assets/images/portfolio/5.jpg" alt="5">
+        <img class="project-image" src="./assets/images/portfolio/6.jpg" alt="6">
+        <img class="project-image" src="./assets/images/portfolio/7.jpg" alt="7">
+        <img class="project-image" src="./assets/images/portfolio/8.jpg" alt="8">
+        <img class="project-image" src="./assets/images/portfolio/9.jpg" alt="9">
+        <img class="project-image" src="./assets/images/portfolio/10.jpg" alt="10">
+        <img class="project-image" src="./assets/images/portfolio/11.jpg" alt="11">
+        <img class="project-image" src="./assets/images/portfolio/12.jpg" alt="12">
       </div>
     </div>
   </section>
@@ -301,6 +327,10 @@
       </div>
     </div>
   </footer>
+
+  <script src="base.js"></script>
+  <script src="plugins/modal.js"></script>
+  <script src="index.js"></script>
 </body>
 
 </html>
