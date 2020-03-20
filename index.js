@@ -205,10 +205,6 @@ const modal = $.modal({
   title: 'The letter was sent',
   closable: false,
   width: '40%',
-  content: `
-    <p>No subject</p>
-    <p>No description</p>
-  `,
   footerButtons: [
     {
       text: 'Ok',
@@ -221,12 +217,24 @@ const modal = $.modal({
 
 const FORM = document.querySelector('.quote__form');
 
-FORM.addEventListener('click', (event) => {
+FORM.addEventListener('submit', (event) => {
   event.preventDefault();
 
-  const element = event.target;
+  const name = FORM.querySelector('.input-name');
+  const email = FORM.querySelector('.input-email');
+  const subject = FORM.querySelector('.input-subject');
+  const textarea = FORM.querySelector('.quote__textarea');
+  const emailPattern = /[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/;
 
-  if (element.classList.contains('quote__button')) {
+  if (name.value && (email.value).match(emailPattern)) {
+    modal.setContent(`
+        ${subject.value ? `<p>Subject: ${subject.value}</p>` : '<p>No subject</p>'}
+        ${textarea.value ? `<p>Description: ${textarea.value}</p>` : '<p>No description</p`>'}
+      `);
     modal.open();
+    FORM.reset();
   }
 });
+
+
+

@@ -706,11 +706,11 @@ a {
 
 .quote__input:focus, .quote__textarea:focus {
   outline: none;
-  background-color: var(--color-bg-dark);
+  /* background-color: var(--color-bg-dark); */
 }
 
 .quote__input:hover, .quote__textarea:hover {
-  background-color: var(--color-bg-dark);
+  /* background-color: var(--color-bg-dark); */
 }
 
 .quote__input::placeholder, .quote__textarea::placeholder {
@@ -729,11 +729,8 @@ a {
   color: var(--color-light);
 }
 
-.quote__input:required:valid {
-  background-color: var(--color-bg-valid);
-}
-
 .quote__button {
+  outline: none;
   font-family: "Lato";
   font-size: 1.2rem;
   font-weight: 400;
