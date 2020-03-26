@@ -11,9 +11,12 @@
 <body>
   <header class="header">
     <div class="wrapper header__wrapper">
-      <a href="#" class="logo">
-        <h1 class="logo__text">Singolo<span class="logo__text_colored">*</span></h1>
-      </a>
+      <div class="header__logo-line">
+        <span class="header__hamburger hamburger"><span class="hamburger__line"></span></span>
+        <a href="#" class="logo">
+          <h1 class="logo__text">Singolo<span class="logo__text_colored">*</span></h1>
+        </a>
+      </div>
       <div class="header__navigation">
         <ul class="navigation">
           <li class="navigation__item"><a href="#" class="navigation__link">Home</a></li>
@@ -37,27 +40,27 @@
               <img class="phone__image" src="./assets/images/slider/medium-phone/phone.png" alt="phone">
               <img class="phone-display__image phone-display__image_active"
                 src="./assets/images/slider/medium-phone/phone-display-yellow.png" alt="phone display">
-              <div class="phone__button phone__button_medium"></div>
+              <div class="phone__button_medium"></div>
             </div>
             <div class="phone_medium phone_medium_horizontal">
-              <img class="phone-shadow__image" src="./assets/images/slider/medium-phone/phone-shadow.png"
+              <img class="phone-shadow__image" src="./assets/images/slider/medium-phone/phone-shadow-horizontal.png"
                 alt="phone shadow">
-              <img class="phone__image" src="./assets/images/slider/medium-phone/phone.png" alt="phone">
+              <img class="phone__image" src="./assets/images/slider/medium-phone/phone-horizontal.png" alt="phone">
               <img class="phone-display__image phone-display__image_active"
                 src="./assets/images/slider/medium-phone/phone-display-blue.png" alt="phone display">
-              <div class="phone__button phone__button_medium"></div>
+              <div class="phone__button_medium"></div>
             </div>
           </div>
         </div>
         <div class="carousel__item">
-          <div class="carousel__description carousel-slide-2">
+          <div class="carousel__description">
             <div class="phone_small phone_small_left">
               <img class="phone-shadow__image" src="./assets/images/slider/small-phone/phone-shadow.png"
                 alt="phone shadow">
               <img class="phone__image" src="./assets/images/slider/small-phone/phone.png" alt="phone">
               <img class="phone-display__image phone-display__image_active"
                 src="./assets/images/slider/small-phone/phone-display-yellow.png" alt="phone display">
-              <div class="phone__button phone__button_small"></div>
+              <div class="phone__button_small"></div>
             </div>
             <div class="phone_large">
               <img class="phone-shadow__image" src="./assets/images/slider/large-phone/phone-shadow.png"
@@ -65,7 +68,7 @@
               <img class="phone__image" src="./assets/images/slider/large-phone/phone.png" alt="phone">
               <img class="phone-display__image phone-display__image_active"
                 src="./assets/images/slider/large-phone/phone-display-green.png" alt="phone display">
-              <div class="phone__button phone__button_large"></div>
+              <div class="phone__button_large"></div>
             </div>
             <div class="phone_small phone_small_right">
               <img class="phone-shadow__image" src="./assets/images/slider/small-phone/phone-shadow.png"
@@ -73,16 +76,16 @@
               <img class="phone__image" src="./assets/images/slider/small-phone/phone.png" alt="phone">
               <img class="phone-display__image phone-display__image_active"
                 src="./assets/images/slider/small-phone/phone-display-yellow.png" alt="phone display">
-              <div class="phone__button phone__button_small"></div>
+              <div class="phone__button_small"></div>
             </div>
           </div>
         </div>
-      </div>
-      <div class="carousel__control carousel__control_left">
-        <div class="arrow arrow_left"></div>
-      </div>
-      <div class="carousel__control carousel__control_right">
-        <div class="arrow arrow_right"></div>
+        <div class="carousel__control carousel__control_left">
+          <div class="arrow arrow_left"></div>
+        </div>
+        <div class="carousel__control carousel__control_right">
+          <div class="arrow arrow_right"></div>
+        </div>
       </div>
     </div>
   </div>
@@ -93,7 +96,7 @@
       <p class="services__text">Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum. Duis mollis,
         non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Fusce dapibus, tellus ac cursus
         commodo, tortor mauris condimentum nibh.</p>
-      <div class="layout-3-column">
+      <div class="layout-3-column service__container">
         <article class="service">
           <div class="service__icon">
             <span class="icon-circle">
@@ -204,7 +207,7 @@
       <p class="about-us__text">Fusce dapibus, tellus ac cursus commodo, tortor mauris condimen. Duis mollis, non
         commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Fusce dapibus, tellus ac cursus
         commodo, tortor mauris condimentum nibh.</p>
-      <div class="layout-3-column">
+      <div class="layout-3-column card__container">
         <article class="card">
           <img src="./assets/images/employees/adam.jpg" alt="Adam Jensen">
           <h3 class="card__title">Adam Jensen</h3>
