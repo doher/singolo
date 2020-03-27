@@ -105,3 +105,13 @@ $.modal = (options) => {
     }
   });
 };
+
+// Aside Menu
+
+const HAMBURGER = document.querySelector('.hamburger');
+const ASIDE = document.querySelector('.aside');
+
+HAMBURGER.addEventListener('click', () => {
+  HAMBURGER.classList.toggle('rotated');
+  ASIDE.classList.toggle('open');
+});
