@@ -1,7 +1,8 @@
 const MENU = document.querySelector('.navigation');
 const PORTFOLIO = document.querySelector('.project-wrapper');
 const TAG_MENU = document.querySelector('.tags');
-const HAMBURGER = document.querySelector('.hamburger');
+const HEADER_HAMBURGER = document.querySelector('.header__hamburger');
+const ASIDE_HAMBURGER = document.querySelector('.aside__hamburger');
 const ASIDE = document.querySelector('.aside');
 const ASIDE_OVERLAY = document.querySelector('.aside__overlay');
 const ASIDE_MENU = document.querySelector('.aside__navigation');
@@ -90,7 +91,8 @@ document.addEventListener('click', (event) => {
   if (element.classList.contains('navigation__link')) {
     selectItem(event, MENU, 'navigation__link');
     selectItem(event, ASIDE_MENU, 'navigation__link');
-    HAMBURGER.classList.toggle('rotated');
+    HEADER_HAMBURGER.classList.toggle('rotated');
+    ASIDE_HAMBURGER.classList.toggle('rotated');
     ASIDE.classList.remove('open');
     ASIDE_OVERLAY.classList.remove('open');
   } else if (element.classList.contains('project-image')) {
@@ -99,11 +101,11 @@ document.addEventListener('click', (event) => {
     makeRandomImages(event);
     selectItem(event, TAG_MENU, 'tag_bordered');
   } else if (element.classList.contains('hamburger')) {
-    element.classList.toggle('rotated');
+    HEADER_HAMBURGER.classList.toggle('rotated');
+    ASIDE_HAMBURGER.classList.toggle('rotated');
     ASIDE.classList.toggle('open');
     ASIDE_OVERLAY.classList.toggle('open');
   }
-
 });
 
 // Modal Box

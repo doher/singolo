@@ -109,6 +109,7 @@ a {
   left: 0;
   border-radius: 5px;
   background-color: #ffffff;
+  z-index: 101;
 }
 
 .header__logo-line {
@@ -1262,6 +1263,15 @@ a {
 }
 
 @media screen and (max-width: 767px) {
+  .aside__wrapper {
+    padding: 29px 20px 30px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+  }
+  .aside__logo {
+    margin-left: 29px;
+  }
   .aside, .aside__overlay, .aside__logo {
     display: block;
   }
@@ -1277,10 +1287,10 @@ a {
     font-size: 2.4rem;
     margin-top: 27px;
   }
-  .aside__logo {
+  /* .aside__logo {
     margin-top: 28px;
     margin-left: 71px;
-  }
+  } */
   .aside {
     opacity: 0;
     z-index: -1;
@@ -1315,9 +1325,6 @@ a {
   }
   .hamburger {
     cursor: pointer;
-  }
-  .header__hamburger {
-    z-index: 101;
   }
   .hamburger.rotated {
     transform: rotate(90deg);
