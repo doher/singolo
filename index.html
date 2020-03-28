@@ -9,34 +9,17 @@
 </head>
 
 <body>
-  <aside class="aside">
-    <div class="aside__menu">
-      <a href="#" class="aside__logo">
-        <h1 class="logo__text">Singolo<span class="logo__text_colored">*</span></h1>
-      </a>
-    </div>
-    <div class="aside__navigation">
-      <ul class="navigation">
-        <li class="navigation__item"><a href="#" class="navigation__link">Home</a></li>
-        <li class="navigation__item"><a href="#services" class="navigation__link">Services</a></li>
-        <li class="navigation__item"><a href="#portfolio" class="navigation__link">Portfolio</a></li>
-        <li class="navigation__item"><a href="#about" class="navigation__link">About</a></li>
-        <li class="navigation__item"><a href="#contact" class="navigation__link">Contact</a></li>
-      </ul>
-    </div>
-  </aside>
-
   <header class="header">
     <div class="wrapper header__wrapper">
+      <span class="header__hamburger hamburger"><span class="hamburger__line"></span></span>
       <div class="header__logo-line">
-        <span class="header__hamburger hamburger"><span class="hamburger__line"></span></span>
         <a href="#" class="logo">
           <h1 class="logo__text">Singolo<span class="logo__text_colored">*</span></h1>
         </a>
       </div>
       <div class="header__navigation">
         <ul class="navigation">
-          <li class="navigation__item"><a href="#" class="navigation__link">Home</a></li>
+          <li class="navigation__item"><a href="#" class="navigation__link active">Home</a></li>
           <li class="navigation__item"><a href="#services" class="navigation__link">Services</a></li>
           <li class="navigation__item"><a href="#portfolio" class="navigation__link">Portfolio</a></li>
           <li class="navigation__item"><a href="#about" class="navigation__link">About</a></li>
@@ -45,6 +28,25 @@
       </div>
     </div>
   </header>
+
+  <div class="aside__overlay">
+    <div class="aside">
+      <div class="aside__menu">
+        <a href="#" class="aside__logo">
+          <h1 class="logo__text">Singolo<span class="logo__text_colored">*</span></h1>
+        </a>
+      </div>
+      <div class="aside__navigation">
+        <ul class="navigation">
+          <li class="navigation__item"><a href="#" class="navigation__link active">Home</a></li>
+          <li class="navigation__item"><a href="#services" class="navigation__link">Services</a></li>
+          <li class="navigation__item"><a href="#portfolio" class="navigation__link">Portfolio</a></li>
+          <li class="navigation__item"><a href="#about" class="navigation__link">About</a></li>
+          <li class="navigation__item"><a href="#contact" class="navigation__link">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
 
   <div class="carousel">
     <div class="wrapper carousel__wrapper">
@@ -69,7 +71,7 @@
             </div>
           </div>
         </div>
-        <div class="carousel__item">
+        <div class="carousel__item carousel__item_colored">
           <div class="carousel__description">
             <div class="phone_small phone_small_left">
               <img class="phone-shadow__image" src="./assets/images/slider/small-phone/phone-shadow.png"
@@ -196,7 +198,7 @@
       <p class="portfolio__text">Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget laciana
         odio sem nec elit.</p>
       <div class="tags portfolio__tags">
-        <span class="tag tag_bordered">All</span>
+        <span class="tag tag_bordered active">All</span>
         <span class="tag tag_bordered">Web Design</span>
         <span class="tag tag_bordered">Graphic Design</span>
         <span class="tag tag_bordered">Artwork</span>
@@ -352,6 +354,8 @@
 
   <script src="base.js"></script>
   <script src="plugins/modal.js"></script>
+  <script src="carousel.js"></script>
+  <script src="display.js"></script>
   <script src="index.js"></script>
 </body>
 

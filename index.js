@@ -1,6 +1,11 @@
 const MENU = document.querySelector('.navigation');
 const PORTFOLIO = document.querySelector('.project-wrapper');
 const TAG_MENU = document.querySelector('.tags');
+const HAMBURGER = document.querySelector('.hamburger');
+const ASIDE = document.querySelector('.aside');
+const ASIDE_OVERLAY = document.querySelector('.aside__overlay');
+const ASIDE_MENU = document.querySelector('.aside__navigation');
+const FORM = document.querySelector('.quote__form');
 
 function randomFunction(n, m) {
   return Math.floor(Math.random() * (m - n + 1)) + n;
@@ -32,179 +37,81 @@ function selectItem(event, block, classItem) {
   }
 }
 
-MENU.addEventListener('click', (event) => selectItem(event, MENU, 'navigation__link'));
-PORTFOLIO.addEventListener('click', (event) => selectItem(event, PORTFOLIO, 'project-image'));
-TAG_MENU.addEventListener('click', (event) => {
-  makeRandomImages(event);
-  selectItem(event, TAG_MENU, 'tag_bordered');
-});
-
-// Carousel
-let items = document.querySelectorAll('.carousel .carousel__item');
-let currentItem = 0;
-let isEnabled = true;
-
-function changeCurrentItem(n) {
-  currentItem = (n + items.length) % items.length;
+function onScroll() {
+  activeItemByScroll('services');
+  activeItemByScroll('portfolio');
+  activeItemByScroll('about');
+  activeItemByScroll('contact');
 }
 
-function hideItem(direction) {
-  isEnabled = false;
-  items[currentItem].classList.add(direction);
-  items[currentItem].addEventListener('animationend', function () {
-    this.classList.remove('carousel__item_active', direction);
-  });
-}
+function activeItemByScroll(id) {
+  const links = document.querySelectorAll('.navigation a');
+  const currentPosition = window.scrollY;
+  const offsetTop = document.querySelector('#' + id).offsetTop;
+  const offsetHeight = document.querySelector('#' + id).offsetHeight;
 
-function showItem(direction) {
-  items[currentItem].classList.add('carousel__item_next', direction);
-  items[currentItem].addEventListener('animationend', function () {
-    this.classList.remove('carousel__item_next', direction);
-    this.classList.add('carousel__item_active');
-    isEnabled = true;
-  });
-}
+  let scrollHeight = Math.max(
+    document.body.scrollHeight, document.documentElement.scrollHeight,
+    document.body.offsetHeight, document.documentElement.offsetHeight,
+    document.body.clientHeight, document.documentElement.clientHeight
+  );
 
-function nextItem(n) {
-  hideItem('to-left');
-  changeCurrentItem(n + 1);
-  showItem('from-right');
-}
+  if (currentPosition === 0) {
+    links.forEach(a => {
+      a.classList.remove('active');
 
-function previousItem(n) {
-  hideItem('to-right');
-  changeCurrentItem(n - 1);
-  showItem('from-left');
-}
+      if (a.getAttribute('href').substring(1) === '') {
+        a.classList.add('active');
+      }
+    });
+  } else if (window.scrollY >= scrollHeight - window.innerHeight) {
+    links.forEach(a => {
+      a.classList.remove('active');
 
-document.querySelector('.carousel__control_left').addEventListener('click', function () {
-  if (isEnabled) {
-    const CAROUSEL = document.querySelector('.carousel');
+      if (a.getAttribute('href').substring(1) === 'contact') {
+        a.classList.add('active');
+      }
+    });
+  } else if (offsetTop <= currentPosition && (offsetTop + offsetHeight) > currentPosition) {
+    links.forEach(a => {
+      a.classList.remove('active');
 
-    previousItem(currentItem);
-
-    CAROUSEL.classList.toggle('carousel_changed');
+      if (a.getAttribute('href').substring(1) === id) {
+        a.classList.add('active');
+      }
+    });
   }
-});
-
-document.querySelector('.carousel__control_right').addEventListener('click', function () {
-  if (isEnabled) {
-    const CAROUSEL = document.querySelector('.carousel');
-
-    nextItem(currentItem);
-
-    CAROUSEL.classList.toggle('carousel_changed');
-  }
-});
-
-const swipeDetect = (el) => {
-
-  let surface = el;
-  let startX = 0;
-  let startY = 0;
-  let distX = 0;
-  let distY = 0;
-  let startTime = 0;
-  let elapsedTime = 0;
-
-  let threshold = 150;
-  let restraint = 100;
-  let allowedTime = 300;
-
-  surface.addEventListener('mousedown', function (e) {
-    startX = e.pageX;
-    startY = e.pageY;
-    startTime = new Date().getTime();
-    e.preventDefault();
-  }, false);
-
-  surface.addEventListener('mouseup', function (e) {
-    distX = e.pageX - startX;
-    distY = e.pageY - startY;
-    elapsedTime = new Date().getTime() - startTime;
-    if (elapsedTime <= allowedTime) {
-      if (Math.abs(distX) >= threshold && Math.abs(distY) <= restraint) {
-        if ((distX > 0)) {
-          if (isEnabled) {
-            previousItem(currentItem);
-          }
-        } else {
-          if (isEnabled) {
-            nextItem(currentItem);
-          }
-        }
-      }
-    }
-    e.preventDefault();
-  }, false);
-
-  surface.addEventListener('touchstart', function (e) {
-    if (e.target.classList.contains('arrow') || e.target.classList.contains('control')) {
-      if (e.target.classList.contains('left')) {
-        if (isEnabled) {
-          previousItem(currentItem);
-        }
-      } else {
-        if (isEnabled) {
-          nextItem(currentItem);
-        }
-      }
-    }
-    var touchObj = e.changedTouches[0];
-    startX = touchObj.pageX;
-    startY = touchObj.pageY;
-    startTime = new Date().getTime();
-    e.preventDefault();
-  }, false);
-
-  surface.addEventListener('touchmove', function (e) {
-    e.preventDefault();
-  }, false);
-
-  surface.addEventListener('touchend', function (e) {
-    var touchObj = e.changedTouches[0];
-    distX = touchObj.pageX - startX;
-    distY = touchObj.pageY - startY;
-    elapsedTime = new Date().getTime() - startTime;
-    if (elapsedTime <= allowedTime) {
-      if (Math.abs(distX) >= threshold && Math.abs(distY) <= restraint) {
-        if ((distX > 0)) {
-          if (isEnabled) {
-            previousItem(currentItem);
-          }
-        } else {
-          if (isEnabled) {
-            nextItem(currentItem);
-          }
-        }
-      }
-    }
-    e.preventDefault();
-  }, false);
 }
 
-var el = document.querySelector('.carousel');
-swipeDetect(el);
-
-// Switch on/off phone display
-function switchDisplay(event) {
+document.addEventListener('scroll', onScroll);
+document.addEventListener('click', (event) => {
   const element = event.target;
 
-  if (element.className.includes('phone__button')) {
-    element.previousElementSibling.classList.toggle('phone-display__image_active');
+  if (element.classList.contains('navigation__link')) {
+    selectItem(event, MENU, 'navigation__link');
+    selectItem(event, ASIDE_MENU, 'navigation__link');
+    HAMBURGER.classList.toggle('rotated');
+    ASIDE.classList.remove('open');
+    ASIDE_OVERLAY.classList.remove('open');
+  } else if (element.classList.contains('project-image')) {
+    selectItem(event, PORTFOLIO, 'project-image')
+  } else if (element.classList.contains('tag_bordered')) {
+    makeRandomImages(event);
+    selectItem(event, TAG_MENU, 'tag_bordered');
+  } else if (element.classList.contains('hamburger')) {
+    element.classList.toggle('rotated');
+    ASIDE.classList.toggle('open');
+    ASIDE_OVERLAY.classList.toggle('open');
   }
-}
 
-const CAROUSEL = document.querySelector('.carousel');
-
-CAROUSEL.addEventListener('click', (event) => switchDisplay(event));
+});
 
 // Modal Box
 
 const modal = $.modal({
   title: 'The letter was sent',
   closable: false,
-  width: '40%',
+  width: '300px',
   footerButtons: [
     {
       text: 'Ok',
@@ -214,8 +121,6 @@ const modal = $.modal({
     }
   ]
 });
-
-const FORM = document.querySelector('.quote__form');
 
 FORM.addEventListener('submit', (event) => {
   event.preventDefault();
@@ -235,6 +140,3 @@ FORM.addEventListener('submit', (event) => {
     FORM.reset();
   }
 });
-
-
-

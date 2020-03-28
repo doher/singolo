@@ -13,7 +13,7 @@
 }
 
 .modal-box.open .modal__overlay {
-  background: rgba(0, 0, 0, 0.5);
+  background: rgb(45, 48, 58, 0.5);
 }
 
 .modal-box.hide .modal__window {
