@@ -1277,8 +1277,7 @@ a {
   }
   .navigation {
     flex-direction: column;
-    margin-left: 71px;
-    margin-top: 100px;
+    margin: 50px 0 0 71px;
   }
   .navigation__item:not(:first-child)::before {
     display: none;
